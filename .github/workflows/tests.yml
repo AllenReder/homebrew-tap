@@ -1,0 +1,37 @@
+name: Test Formula
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Set up Homebrew on Linux
+        if: runner.os == 'Linux'
+        uses: Homebrew/actions/setup-homebrew@18fcb8e3e06b4247c676c506750dc95ea7226479
+
+      - name: Test Formula
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! -f Formula/tmh.rb ]]; then
+            echo "Formula/tmh.rb has not been published yet."
+            exit 0
+          fi
+          brew style Formula/tmh.rb
+          brew audit --strict --online Formula/tmh.rb
+          brew tap-new --no-git tmh-test/tap
+          tap_dir="$(brew --repository tmh-test/tap)"
+          install -m 0644 Formula/tmh.rb "$tap_dir/Formula/tmh.rb"
+          brew install tmh-test/tap/tmh
+          brew test tmh-test/tap/tmh
