@@ -28,10 +28,10 @@ jobs:
             echo "Formula/tmh.rb has not been published yet."
             exit 0
           fi
-          brew style Formula/tmh.rb
-          brew audit --strict --online Formula/tmh.rb
           brew tap-new --no-git tmh-test/tap
           tap_dir="$(brew --repository tmh-test/tap)"
           install -m 0644 Formula/tmh.rb "$tap_dir/Formula/tmh.rb"
+          brew style tmh-test/tap/tmh
+          brew audit --strict --online tmh-test/tap/tmh
           brew install tmh-test/tap/tmh
           brew test tmh-test/tap/tmh
