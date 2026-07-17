@@ -1,26 +1,26 @@
 class Tmh < Formula
   desc "Turn natural language into reviewable terminal commands"
   homepage "https://github.com/AllenReder/tmh"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/AllenReder/tmh/releases/download/v0.2.0/tmh_darwin_arm64.tar.gz"
-      sha256 "368aa477136b9ae8082fd20a2bd603d646a06e9f83f10796568ec5944d7f30b2"
+      url "https://github.com/AllenReder/tmh/releases/download/v0.2.1/tmh_darwin_arm64.tar.gz"
+      sha256 "70918511fb68a884bd0132026f40dcad6a4cce426fb1441ca242a39f9a93b90b"
     else
-      url "https://github.com/AllenReder/tmh/releases/download/v0.2.0/tmh_darwin_amd64.tar.gz"
-      sha256 "04ef97a19b3abcea25fa3b037ed0a36cbb66be21c19289c46701638bbff9f8df"
+      url "https://github.com/AllenReder/tmh/releases/download/v0.2.1/tmh_darwin_amd64.tar.gz"
+      sha256 "3558f242eb0d9f83c98ff2e374d302ca7d0519a61bc0a0589869c1995f1a4dee"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/AllenReder/tmh/releases/download/v0.2.0/tmh_linux_arm64.tar.gz"
-      sha256 "11e9a4cec5700b8216162a8eb267e455738e81d224d51bed50fb58684069df3d"
+      url "https://github.com/AllenReder/tmh/releases/download/v0.2.1/tmh_linux_arm64.tar.gz"
+      sha256 "356c228c04fa60975dc3d9e176750fc11830ae33874404228a155ce86d5eb345"
     else
-      url "https://github.com/AllenReder/tmh/releases/download/v0.2.0/tmh_linux_amd64.tar.gz"
-      sha256 "dd2c6354acea15e914dc05a159a58f1853bbbd7d2b3fb25938f889216a34ded3"
+      url "https://github.com/AllenReder/tmh/releases/download/v0.2.1/tmh_linux_amd64.tar.gz"
+      sha256 "579c7ff5154786ddc6b3ee75cf0d3cf14fad46da7cb4d7fff097bc61ccde54d1"
     end
   end
 
