@@ -1,4 +1,23 @@
-# Homebrew tap for tmh
+# AllenReder Homebrew tap
+
+Homebrew formulae and casks maintained by [AllenReder](https://github.com/AllenReder).
+
+## Not Boring Notch
+
+A modern, high-performance notch companion for macOS.
+
+```sh
+brew install --cask AllenReder/tap/not-boring-notch
+```
+
+The app is ad-hoc signed and not notarized, so macOS Gatekeeper blocks the first
+launch after a normal install. Pass `--no-quarantine` to avoid it:
+
+```sh
+brew install --cask --no-quarantine AllenReder/tap/not-boring-notch
+```
+
+## tmh
 
 Install [tmh](https://github.com/AllenReder/tmh) on macOS or Linux:
 
