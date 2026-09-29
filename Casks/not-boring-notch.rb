@@ -16,6 +16,12 @@ cask "not-boring-notch" do
 
   app "Not Boring Notch.app"
 
+  zap trash: [
+    "~/Library/Application Scripts/com.allenreder.notboringnotch",
+    "~/Library/Containers/com.allenreder.notboringnotch",
+    "~/Library/Preferences/com.allenreder.notboringnotch.plist",
+  ]
+
   caveats <<~EOS
     Not Boring Notch is ad-hoc signed and not notarized, so macOS Gatekeeper
     blocks the first launch after a normal install. Either install without the
@@ -27,10 +33,4 @@ cask "not-boring-notch" do
 
       xattr -dr com.apple.quarantine "/Applications/Not Boring Notch.app"
   EOS
-
-  zap trash: [
-    "~/Library/Application Scripts/com.allenreder.notboringnotch",
-    "~/Library/Containers/com.allenreder.notboringnotch",
-    "~/Library/Preferences/com.allenreder.notboringnotch.plist",
-  ]
 end

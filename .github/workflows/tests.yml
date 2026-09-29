@@ -35,3 +35,10 @@ jobs:
           brew audit --strict --online tmh-test/tap/tmh
           brew install tmh-test/tap/tmh
           brew test tmh-test/tap/tmh
+
+          if [[ "${RUNNER_OS}" == "macOS" && -f Casks/not-boring-notch.rb ]]; then
+            mkdir -p "$tap_dir/Casks"
+            install -m 0644 Casks/not-boring-notch.rb "$tap_dir/Casks/not-boring-notch.rb"
+            brew style --cask tmh-test/tap/not-boring-notch
+            brew audit --cask tmh-test/tap/not-boring-notch
+          fi

@@ -1,7 +1,6 @@
 class Tmh < Formula
   desc "Turn natural language into reviewable terminal commands"
   homepage "https://github.com/AllenReder/tmh"
-  version "0.2.1"
   license "MIT"
 
   on_macos do
