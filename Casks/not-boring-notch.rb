@@ -1,6 +1,6 @@
 cask "not-boring-notch" do
-  version "1.1.0"
-  sha256 "b01aec566cad30c4756fed3280798379d715e28c4772f1f3b0935042f3e6a1ae"
+  version "1.2.0"
+  sha256 "e8622a0756cf72c0eaaa1a20158892d58c5af915139d249dc19937f163fd0a32"
 
   url "https://github.com/AllenReder/not-boring-notch/releases/download/v#{version}/Not-Boring-Notch-v#{version}.dmg"
   name "Not Boring Notch"
